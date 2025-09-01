@@ -1,0 +1,19 @@
+<div class="box">
+    <h2 class="title is-4">🛠 Manage Jokes</h2>
+
+    <div class="field has-addons">
+        <div class="control is-expanded">
+            <input class="input" type="text" [(ngModel)]="newJoke" placeholder="Enter a new joke..." />
+        </div>
+        <div class="control">
+            <button class="button is-success" (click)="add()">Add</button>
+        </div>
+    </div>
+
+    <ul>
+        <li *ngFor="let joke of jokesService.jokes(); let i = index" class="mt-2">
+            {{ joke.text }}
+            <button class="button is-small is-danger is-light ml-2" (click)="delete(joke.id)">Delete</button>
+        </li>
+    </ul>
+</div>
