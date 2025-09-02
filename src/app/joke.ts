@@ -14,7 +14,7 @@ export class JokesService {
 
   readonly jokes = this._jokes.asReadonly();
 
-  readonly endpoint = '/jokes';
+  readonly endpoint = 'https://express-practice-5brx.onrender.com/jokes';
 
   fetchJokes() {
     this.http.get<Joke[]>(this.endpoint).subscribe(data => this._jokes.set(data));

@@ -1,8 +1,1 @@
-{
-  "/jokes": {
-    "target": "https://express-practice-5brx.onrender.com",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
-  }
-}
+
