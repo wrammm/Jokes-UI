@@ -1,7 +1,14 @@
 <section class="section">
     <div class="container">
         <app-carousel></app-carousel>
-        <hr />
-        <app-manage></app-manage>
+        <div class="expansion-panel mb-4">
+            <div class="expansion-header" (click)="toggleManage()">
+                <span class="expansion-title">🛠 Manage Jokes</span>
+                <span class="expansion-icon" [class.open]="showManage">&#9660;</span>
+            </div>
+            <div class="expansion-content" *ngIf="showManage">
+                <app-manage></app-manage>
+            </div>
+        </div>
     </div>
 </section>

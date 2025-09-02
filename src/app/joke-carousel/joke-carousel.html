@@ -1,9 +1,9 @@
 <div class="box has-text-centered">
-    <h2 class="title is-4">😂 Joke Carousel</h2>
-    <p *ngIf="jokes.length">{{ jokes[current()]?.text }}</p>
-    <p *ngIf="!jokes.length">Loading...</p>
+    <h2 class="title is-4">Dad Jokes 😂</h2>
+    <p *ngIf="jokes().length">{{ jokes()[current()].text }}</p>
+    <p *ngIf="!jokes().length">Loading...</p>
     <div class="buttons is-centered mt-4">
-        <button class="button is-link" (click)="prev()" [disabled]="current() === 0">Prev</button>
-        <button class="button is-link" (click)="next()" [disabled]="current() === jokes.length - 1">Next</button>
+    <button class="button is-link" (click)="prev()" [disabled]="current() === 0">Prev</button>
+    <button class="button is-link" (click)="next()" [disabled]="current() === jokes().length - 1">Next</button>
     </div>
 </div>

@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class JokeCarousel {
   jokesService = inject(JokesService);
-  jokes = this.jokesService.jokes();
+  jokes = this.jokesService.jokes; // assign the signal, not its value
   current = signal(0);
 
   constructor() {
@@ -18,7 +18,8 @@ export class JokeCarousel {
   }
 
   next() {
-    this.current.update(i => Math.min(i + 1, this.jokes.length - 1));
+    const jokes = this.jokes();
+    this.current.update(i => Math.min(i + 1, jokes.length - 1));
   }
 
   prev() {

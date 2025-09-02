@@ -10,10 +10,14 @@
         </div>
     </div>
 
-    <ul>
-        <li *ngFor="let joke of jokesService.jokes(); let i = index" class="mt-2">
-            {{ joke.text }}
-            <button class="button is-small is-danger is-light ml-2" (click)="delete(joke.id)">Delete</button>
+    <ul class="joke-list">
+        <li *ngFor="let joke of jokesService.jokes(); let i = index" class="mt-2 joke-list-item">
+            <span class="joke-text">{{ joke.text }}</span>
+            <button class="button is-small is-danger is-light trash-btn" (click)="delete(joke.id)" title="Delete">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </span>
+            </button>
         </li>
     </ul>
 </div>
