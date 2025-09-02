@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-gh": "ng build --output-path=docs --base-href=/your-repo-name/",
+    "build-gh": "ng build --base-href=/Jokes-UI/ && mv docs/browser/* docs/ && rm -rf docs/browser && cp docs/index.html docs/404.html",
     "deploy": "angular-cli-ghpages --dir=dist"
   },
   "prettier": {
