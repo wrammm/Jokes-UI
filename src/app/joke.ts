@@ -1,6 +1,8 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { environment } from '../environments/environment';
+
 
 export interface Joke {
   id: number;
@@ -14,7 +16,7 @@ export class JokesService {
 
   readonly jokes = this._jokes.asReadonly();
 
-  readonly endpoint = '/jokes';
+  readonly endpoint = `${environment.apiUrl}/jokes`;
 
   fetchJokes() {
     this.http.get<Joke[]>(this.endpoint).subscribe(data => this._jokes.set(data));
